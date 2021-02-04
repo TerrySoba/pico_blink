@@ -15,5 +15,5 @@ RUN mkdir pico && \
 ENV PICO_SDK_PATH=/pico/pico-sdk
 
 
-CMD cd /src/build && cmake .. && make -j4 && ls
+CMD cd /src/build && cmake .. && make -j4
 
