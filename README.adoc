@@ -1,0 +1,5 @@
+= Pico Blink
+
+This is an example project for the Raspberry Pi Pico that includes the SDK and does not require an installation of the SDK.
+
+It uses Docker to build a build image that contains the SDK and openocd.
