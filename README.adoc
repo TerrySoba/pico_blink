@@ -1,3 +1,4 @@
+:icons: font
 = Pico Blink
 
 This is an example project for the Raspberry Pi Pico that includes the SDK and does not require an installation of the SDK.
@@ -17,7 +18,7 @@ To use this you'll need at least the following things:
 
 To build the example simply clone this repository and then run the `build.sh` script.
 
-NOTE: Make sure that the `docker` command can be run without using sudo. If this does not work, then none of the follwing scripts will work.
+IMPORTANT: Make sure that the `docker` command can be run without using sudo. If this does not work, then none of the following scripts will work.
 
 [source,bash]
 ----
@@ -26,7 +27,7 @@ cd pico_blink
 ./build.sh
 ----
 
-
+NOTE: The first time the `build.sh` command is used the docker container will be built. This might take a few minutes.
 
 After the build, the `build` directory will contain the built software.
 You may now simply copy the `build/blink.uf2` file to Raspberry Pi Pico while in the bootloader.
@@ -34,10 +35,10 @@ You may now simply copy the `build/blink.uf2` file to Raspberry Pi Pico while in
 A more elegant solution is to use a second Raspberry Pi Pico using the https://github.com/raspberrypi/picoprobe[Picoprobe] firmware as an SWD debug adapter.
 The wiring of the Picoprobe is described in the official documentation of the Raspberry Pi Pico.
 
-When the Picoprobe is connected, the the `flash.sh` script may be used to flash the firmware.
+When the Picoprobe is connected, the `flash.sh` script may be used to flash the firmware.
+This way you won't need to constantly plug and unplug the USB connector to flash a new firmware.
 
 [source,bash]
 ----
 ./flash.sh
 ----
-
