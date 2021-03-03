@@ -1,4 +1,10 @@
-:icons: font
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
 = Pico Blink
 
 This is an example project for the Raspberry Pi Pico that includes the SDK and does not require an installation of the SDK.
