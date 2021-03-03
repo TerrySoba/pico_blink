@@ -1,5 +1,43 @@
 = Pico Blink
 
 This is an example project for the Raspberry Pi Pico that includes the SDK and does not require an installation of the SDK.
-
 It uses Docker to build a build image that contains the SDK and openocd.
+
+== Prerequisites
+
+To use this you'll need at least the following things:
+
+ * A https://www.raspberrypi.org/products/raspberry-pi-pico/[Raspberry Pi Pico] to be programmed
+ * (optional) A second https://www.raspberrypi.org/products/raspberry-pi-pico/[Raspberry Pi Pico] running https://github.com/raspberrypi/picoprobe[Picoprobe] to act as an SWD debug adapter.
+ * A linux system (only Intel x64 tested)
+ * A working docker installation
+
+
+== Building the example
+
+To build the example simply clone this repository and then run the `build.sh` script.
+
+NOTE: Make sure that the `docker` command can be run without using sudo. If this does not work, then none of the follwing scripts will work.
+
+[source,bash]
+----
+git clone https://github.com/TerrySoba/pico_blink.git
+cd pico_blink
+./build.sh
+----
+
+
+
+After the build, the `build` directory will contain the built software.
+You may now simply copy the `build/blink.uf2` file to Raspberry Pi Pico while in the bootloader.
+
+A more elegant solution is to use a second Raspberry Pi Pico using the https://github.com/raspberrypi/picoprobe[Picoprobe] firmware as an SWD debug adapter.
+The wiring of the Picoprobe is described in the official documentation of the Raspberry Pi Pico.
+
+When the Picoprobe is connected, the the `flash.sh` script may be used to flash the firmware.
+
+[source,bash]
+----
+./flash.sh
+----
+
